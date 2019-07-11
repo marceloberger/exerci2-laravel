@@ -9,18 +9,9 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 WORKDIR /var/www
 
-
-
 RUN rm -rf /var/www/html
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-COPY . /var/www
-#RUN composer install && \
-#            cp .env.example .env && \
-#            php artisan key:generate && \
-#            php artisan config:cache
-
 
 RUN ln -s public html
 
